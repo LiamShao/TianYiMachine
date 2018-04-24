@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>天意机械</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="./static/css/bootstrap.min.css">
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="./static/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen and (min-device-width: 1024px)" href="./page.css">
+    <!-- 自适应 -->
+    <link rel="stylesheet" type="text/css" media="screen and (max-device-width: 480px)" href="./smallScreen.css" />
+    <link rel="stylesheet" type="text/css" media="screen and (min-device-width: 767px) and (max-device-width: 1024px)" href="./padScreen.css" />
+    <script>
+        window.onresize = function(){
+            var width = $(window).width();
+            console.log(width);
+            var node = document.createElement('link');
+            node.rel = 'stylesheet';
+            node.type = 'text/css';
+                if(width<767 && width>480){
+                    node.href = './padScreen.css';
+                    node.onload = function(){
+                        console.log('1加载成功！');
+                    };
+                    node.onerror = function(){
+                        console.log('1加载失败！');
+                    };
+                    document.getElementsByTagName('head')[0].appendChild(node);
+                }else if(width>767){
+                    window.location.reload();
+                }else if(width<480){
+                    node.href = './smallScreen.css';
+                    node.onload = function(){
+                        console.log('3加载成功！');
+                    };
+                    node.onerror = function(){
+                        console.log('3加载失败！');
+                    };
+                    document.getElementsByTagName('head')[0].appendChild(node);
+                }
+        };
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="top row">
+            <div class="col-md col-md-2"></div>
+            <div class="col-md col-md-8 col-sm-12">
+                <div>全国客服热线:400-0537-099</div>
+                <div class="top-right">
+                    <a class="group-email" href="javascript:;">集团邮箱</a> 
+                    <span class="my-line">|</span>
+                    <label>
+                        <div class="dropdown">
+                            <button id="langBtn" class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                <i class="china-flag"></i> 
+                                 &nbsp;中文&nbsp;&nbsp;   
+                            </button>
+                            <i class="down-icon"></i>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                <li><a href="#" id="changeToEn">
+                                    <i class="eng-flag"></i> 
+                                    &nbsp;English&nbsp;&nbsp;
+                                </a></li>
+                            </ul>
+                        </div>
+                    </label>
+                    
+                </div>
+            </div>
+            <div class="col-md col-md-2 visible-md-8 visible-lg-8"></div>
+        </div>
+        <div class="nav row">
+            <div class="col-md col-md-2"></div>
+            <div id="wrapper" class="col-md col-md-8">
+                <div class="logo-con"><i class="logo"></i></div>
+                <div class="nav-item">首页</div>
+                <div class="nav-item" data-subnav="nav-expression">天意印象</div>
+                <div class="nav-item" data-subnav="nav-product">核心产品</div>
+                <div class="nav-item" data-subnav="nav-news">新闻中心</div>
+                <div class="nav-item" data-subnav="nav-international">天意国际</div>
+                <div class="nav-item" data-subnav="nav-research">研究中心</div>
+                <div class="nav-item" data-subnav="nav-culture">品牌文化</div>
+                <div class="nav-item" data-subnav="nav-hr">人力资源</div>
+                <div class="nav-item" data-subnav="nav-contact">联系我们</div>
+            </div>
+            <div class="col-md col-md-2"></div>
+        </div>
+        <div class="sub-nav">
+            <div class="nav-expression">
+                <div class="part1">
+                    <h3>天意印象</h3>
+                    <p>山东天意机械股份有限公司是致力于装配式建筑装备研发、生产、销售于一体的高新技术企业，取得专利156项，起草及参编9个国家标准。</p>
+                    <a>查看更多</a>
+                </div>
+                <div class="part2">
+                    <ul>
+                        <li><a>公司概况</a></li>
+                        <li><a>发展历程</a></li>
+                        <li><a>总裁专栏</a></li>
+                        <li><a>荣誉资质</a></li>
+                        <li><a>办公环境</a></li>
+                        <li><a>联系我们</a></li>
+                    </ul>
+                </div>
+                <div class="part3">
+                    <i class="pic"></i>
+                    <p>天意的发展已经进入了快车道，连续多年保持着高速增长，引起社会各界的持续关注。</p>
+                </div>
+            </div>
+        </div>
+        <div id="myCarousel" class="carousel slide">
+            <!-- 轮播（Carousel）指标 -->
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol>   
+            <!-- 轮播（Carousel）项目 -->
+            <div class="carousel-inner">
+                <div class="item active">
+                    <a href="http://www.baidu.com"><img src="./static/images/banner1.png" alt="First slide"></a>
+                    
+                </div>
+                <div class="item">
+                    <img src="./static/images/banner1.png" alt="Second slide">
+                </div>
+                <div class="item">
+                    <img src="./static/images/banner1.png" alt="Third slide">
+                </div>
+            </div>
+            <!-- 轮播（Carousel）导航 -->
+            <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+        <div class="slogan row">
+            <div class="col-md col-md-2"></div>
+            <div class="col-md col-md-8">
+                <div class="slogan-top">
+                    <h3>诚信 创新 高效 利他</h3>
+                    <div class="underline"></div>
+                    <span class="slogan-small">天意——墙板装备行业领跑者，正逐步成为墙板机械的重要技术研发基地!</span>
+                </div>
+                <div class="card">
+                    <div class="thumbnail">
+                        <img src="./static/images/WechatIMG21.png" alt="...">
+                        <div class="caption" id="cap1">
+                            <h4>PC装备生产线</h4>
+                            <p>PC(PREFABRICATED CONCRETE)--钢筋混凝土预制件，是指在工厂中通过标准化、机械化方式，预先加工制作的建筑物或构建物的混凝土部件.</p>
+                        </div>
+                    </div>
+                    <div class="thumbnail">
+                        <img src="./static/images/WechatIMG31.png" alt="...">
+                        <div class="caption">
+                            <h4>墙板装备生产线</h4>
+                            <p>墙板设备(新型墙板设备、新型复合墙板机、轻质复合墙体板设备、新型墙体板设备)是一种绿色、环保、节能、保温防火性能优越的新型大...</p>    
+                        </div>
+                    </div>
+                    <div class="thumbnail">
+                        <img src="./static/images/WX20180412-093500@2x.png" alt="...">
+                        <div class="caption">
+                            <h4>保温装饰一体化装备生产线</h4>
+                            <p>保温装饰一体化板是置于建筑物墙体表面的保温及装饰系统保温效果优秀并且长期，热桥作用少，节能保温效果好.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md col-md-2"></div>
+        </div>
+        <div class="news row">
+            <div class="col-md col-md-2"></div>
+            <div class="col-md col-md-8">
+                <div class="left-news">
+                    <div class="left-news-top">
+                        <div>
+                            <h3>公司新闻</h3>
+                            <div class="underline"></div>
+                        </div>
+                        <a>查看更多></a>
+                    </div>
+                    <div class="left-news-middle">
+                        <div class="thumbnail">
+                            <img src="./static/images/新闻2.png" alt="...">
+                            <div class="caption">
+                                <a><p class="title">天意机械召开2018年大学生入职欢迎会</p></a>
+                                <p class="content">3月7日上午，天意机械2018年大学生入职欢迎会在办公楼会议室举行。会议由公司副总经理</p>    
+                            </div>
+                        </div>
+                        <div class="thumbnail">
+                            <img src="./static/images/新闻1.png" alt="...">
+                            <div class="caption">
+                                <a><p class="title">保温装饰一体化装备生产线</p></a>
+                                <p class="content">保温装饰一体化板是置于建筑物墙体表面的保温及装饰系统保温效果优秀并且长期，热桥作用少，节能保温效果好.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="left-news-bottom">
+                        <div class="left-news-list">
+                            <div class="list-item">
+                                <div class="symbol">
+                                    <div class="symbol-top"><span>03</span></div>
+                                    <div class="symbol-bottom">2018-3</div>
+                                </div>
+                                <div class="list-content">
+                                    <p class="title">天意机械参加区工商联十三届二次执行会</p>
+                                    <p class="desc">4月3日上午，济宁市兖州区工商联十三届二次执行会召开，区委副书记寇宁、副区长褚福从vhmbmnb，</p>
+                                    <a>查看更多</a>                               
+                                </div>
+                            </div>
+                            <div class="list-item">
+                                <div class="symbol">
+                                    <div class="symbol-top"><span>03</span></div>
+                                    <div class="symbol-bottom">2018-3</div>
+                                </div>
+                                <div class="list-content">
+                                    <p class="title">天意机械参加区工商联十三届二次执行会</p>
+                                    <p class="desc">4月3日上午，济宁市兖州区工商联十三届二次执行会召开，区委副书记寇宁、副区长褚福从vhmbmnb，</p>
+                                    <a>查看更多</a>                               
+                                </div>
+                            </div>
+                            <div class="list-item">
+                                <div class="symbol">
+                                    <div class="symbol-top"><span>03</span></div>
+                                    <div class="symbol-bottom">2018-3</div>
+                                </div>
+                                <div class="list-content">
+                                    <p class="title">天意机械参加区工商联十三届二次执行会</p>
+                                    <p class="desc">4月3日上午，济宁市兖州区工商联十三届二次执行会召开，区委副书记寇宁、副区长褚福从vhmbmnb，</p>
+                                    <a>查看更多</a>                               
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="right-news">
+                    <div class="right-news-top">
+                        <div>
+                            <h3>视频中心</h3>
+                            <div class="underline"></div>
+                        </div>
+                        <a>查看更多></a>
+                    </div>
+                    <div class="video">
+                        <video width="100%" height="200" controls>
+                            <source src="http://v.youku.com/v_show/id_XODg0NjU2MTg0.html?spm=a2h0k.8191407.0.0&from=s1.8-1-1.2" type="video/mp4">
+                            您的浏览器不支持 video 标签。
+                        </video>
+                    </div>
+                    <div class="media-repo">
+                        <div>
+                            <h3>媒体报道</h3>
+                            <div class="underline"></div>
+                        </div>
+                        <a>查看更多></a>
+                    </div>
+                    <div class="right-news-list">
+                        <p>山东政协委员刘洪斌：大力推进装配式建筑发展</p>
+                        <p>CCTV今日说法报道“遭遇车祸困境，爱心企业山东行”</p>
+                        <p>贺：山东天意机械股份有限公司被省政府评为全省先进单位</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md col-md-2"></div>
+        </div>
+        <div class="tianyi-ability row">
+            <div class="col-md col-md-2"></div>
+            <div class="col-md col-md-8">
+                <div class="slogan-top">
+                    <h3>天意实力</h3>
+                    <div class="underline"></div>
+                    <span class="slogan-small">截止2017年1月，全球已有86个国家和地区，超过6000家厂商，选购天意机械生产线，天意机械销售网络及服务遍布全球</span>
+                </div>
+                <div class="ability-desc">
+                    <div class="map">
+                        <img src="./static/images/图层1.png">
+                    </div>
+                    <div class="data">
+                        <div class="left">
+                            <div>
+                                <span class="big">86</span><sup class="small">项</sup>
+                                <p>产品专利</p>
+                            </div>
+                            <div style="margin-top: 30px">
+                                <span class="big">80</span><sup class="small">＋</sup>
+                                <p>国家地区</p>
+                            </div>
+                        </div>
+                        <div class="right">
+                            <div>
+                                <span class="big">20</span><sup class="small">年</sup>
+                                <p>行业经验</p>
+                            </div>
+                            <div style="margin-top: 30px">
+                                <span class="big">6000</span><sup class="small">＋</sup>
+                                <p>服务客户</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md col-md-2"></div>
+        </div>
+        <div class="exhibition row">
+            <div class="col-md col-md-2"></div>
+            <div class="col-md col-md-8">
+                    <div class="block">
+                        <div class="img"><img src="./static/images/WechatIMG81.png"></div>
+                        <div class="txt">
+                            <span>3D展厅</span>
+                            <p>3D展示，虚拟现实，给您带来全新体验</p>
+                            <a>更多</a>
+                        </div>
+                    </div>
+                    <div class="block">
+                        <div class="img"><img src="./static/images/WX20180401-120947.png"></div>
+                        <div class="txt">
+                            <span>天意印象</span>
+                            <p>天意是致配力于装配式 建筑装备研发、生产、销售于一体的是高新技术企业</p>
+                            <a>更多</a>
+                        </div>
+                    </div> 
+                    <div class="block">
+                        <div class="img"><img src="./static/images/WX20180412-150154@2x.png"></div>
+                        <div class="txt">
+                            <span>社会责任</span>
+                            <p>勇担社会责任是助推成长的不竭动力，是一种持之以恒的信念</p>
+                            <a>更多</a>
+                        </div>
+                    </div>        
+            </div>
+            <div class="col-md col-md-2"></div>
+        </div>
+        <div class="footer row">
+            <div class="col-md col-md-2"></div>
+            <div class="col-md col-md-8">
+                <div class="part1">
+                    <img src="./static/images/logo1@3x.png">
+                    <ul>
+                        <li>电话：400-0537-099</li>
+                        <li>传真：0537-3494666</li>
+                        <li>秦经理：18954086666</li>
+                        <li>任经理：18364704444</li>
+                        <li>地址：山东济宁市兖州工业园区 天意装配式建筑产业园</li>
+                    </ul>
+                </div>
+                <div class="part2">
+                    <h4>网站导航</h4>
+                    <div class="link-group">
+                        <a>网站首页</a>	&nbsp;	&nbsp;<a>天意国际</a><br>
+                        <a>天意印象</a> &nbsp;	&nbsp;<a>研究中心</a><br>
+                        <a>产品中心</a>	&nbsp;	&nbsp;<a>品牌文化</a><br>
+                        <a>新闻资讯</a>	&nbsp;	&nbsp;<a>联系我们</a>
+                    </div>
+                </div>
+                <div class="part3">
+                    <h4>友情链接</h4>
+                    <div class="link-group">
+                        <a>卓越精工</a><br>
+                        <a>北京瑞图</a><br>
+                        <a>菱镁协会</a>
+                    </div>
+                </div>
+                <div class="part4">
+                    <h4>微信公众号</h4>
+                    <img src="./static/images/weixin.png">
+                </div>
+            </div>
+            <div class="col-md col-md-2"></div>
+        </div>
+        <div class="bottom row">
+            <div class="col-md col-md-12">
+                <span>版权所有：山东天意机械股份有限公司-鲁ICP备13006208号</span>
+            </div>
+        </div>
+    </div>
+    <script src="./nav.js"></script>
+    <script>
+        $('#myCarousel').carousel({
+            //自动4秒播放
+            interval : 4000,
+        });
+    </script>
+</body>
+</html>
